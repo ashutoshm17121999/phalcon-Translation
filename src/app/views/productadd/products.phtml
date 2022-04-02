@@ -1,0 +1,32 @@
+<h2>Add Product</h2>
+<!-- <div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
+    <?php //echo isset($message)?$message:''; ?>
+</div> -->
+
+<?php echo $this->tag->form("productadd/products"); ?>
+<p>
+    <label for="name">Name</label>
+    <?php echo $this->tag->textField("name"); ?>
+</p>
+<p>
+    <label for="description">Decsription</label>
+    <?php echo $this->tag->textField("description"); ?>
+</p>
+<p>
+    <label for="price">Price</label>
+    <?php echo $this->tag->textField("price"); ?>
+</p>
+<p>
+    <label for="stocks">Stocks</label>
+    <?php echo $this->tag->textField("stocks"); ?>
+</p>
+<p>
+    <label for="tags">Tags</label>
+    <?php echo $this->tag->textField("tags"); ?>
+</p>
+
+<?php echo $this->tag->submitButton("Submit"); ?>
+<p>
+    <a href="/index">Main Page</a>
+</p>
+</form>

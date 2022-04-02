@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid col text-center mt-2">
+        <h2>Give Permissions</h2>
+    </div>
+    <div class="container-fluid border border-dark w-50 p-3 mt-5">
+        <form action="/secure/addpermission" method="POST">
+            <div>
+                <label class="form-label" for="roles">Roles</label>
+                <select name="roles">
+                    <?php foreach ($role as $k) { ?>
+                        <option value="<?php echo $k->role ?>"><?php echo $k->role ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label" for="controller">Controller</label>
+                <select name="controller">
+                    <?php foreach ($controller as $k) { ?>
+                        <option value="<?php echo $k->controller ?>"><?php echo $k->controller ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label" for="action">Action</label>
+                <br>
+
+                <?php 
+                $action = Actions::find();
+                $i =0;
+                foreach ($action as $k=>$v) { ?>
+                    <label for="<?php echo $v->action;?>"><?php echo $v->action; ?></label>
+                    <input type="checkbox" name="<?php echo $v->action.$i; ?>" value="<?php echo $v->action; ?>"><br>
+                <?php $i++;
+            } ?>
+            </div>
+
+            <div class="col text-center">
+                <input type="submit" class="btn btn-primary text-center" value="Add" name="add">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+
+
+<h2>Setting</h2>
+<!-- <div class="alert alert-<?php echo $success === true ? 'success' : 'danger'; ?>">
+    <?php //echo isset($message)?$message:''; ?>
+</div> -->
+
+
+<!-- <p>
+    <label for="customer_name">Customer Name</label>
+    <?php echo $this->tag->textField("customer_name"); ?>
+</p>
+<p>
+    <label for="customer_address">Customer Address</label>
+    <?php echo $this->tag->textField("customer_address"); ?>
+</p>
+<p>
+    <label for="zipcode">Zipcode</label>
+    <?php echo $this->tag->textField("zipcode"); ?>
+</p> -->
+<?php echo $this->tag->form("settings/setting"); ?>
+<p>
+    <label for="time_optimization">Time Optimization</label>
+    <?php echo $this->tag->select(
+    [
+        'time_optimization',
+        //$data,
+        [
+           1 => 'with tags', 
+           2 => 'without tags',
+        ]
+    ]
+); ?>
+</p>
+<p>
+    <label for="default_price">Default Price</label>
+    <?php echo $this->tag->textField("default_price"); ?>
+</p>
+<p>
+    <label for="default_stock">Default Stock</label>
+    <?php echo $this->tag->textField("default_stock"); ?>
+</p>
+<p>
+    <label for="default_zipcode">Default Zipcode</label>
+    <?php echo $this->tag->textField("default_zipcode"); ?>
+</p>
+
+<?php echo $this->tag->submitButton("Submit"); ?>
+<p>
+    <a href="/index">Main Page</a>
+</p>
+</form>
